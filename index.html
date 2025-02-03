@@ -25,7 +25,7 @@
 				</div>
 			</section>
 
-		<!-- Sobre mim -->
+					<!-- Sobre mim -->
 			<section id="one" class="main style1">
 				<div class="container">
 					<div class="row gtr-150">
@@ -33,10 +33,13 @@
 							<header class="major">
 								<h2>Quem é Gustavo?</h2>
 							</header>
-							<p>Eu sou um analista de dados com 1 ano e 6 meses de experiência. Apesar de querer me especializar em desenvolvedor back-end inicialmente, 
-								meu primeiro estágio no Tribunal Superior do Trabalho me puxou para o mundo data-driven. 
-								Por já ter noção de lógica de programação, acabei adentrando a área de Analytics com maior facilidade, uma vez que a lógica me ajudou a 
-								desenvolver um pensamento estrutural e analítico, fundamental na interpretação de dados e em como criar soluções eficazes.</p>
+							<p id="experiencia">
+								Eu sou um analista de dados com <span id="tempo-experiencia"></span> de experiência. 
+								Apesar de querer me especializar em desenvolvedor back-end inicialmente, meu primeiro estágio no 
+								Tribunal Superior do Trabalho me puxou para o mundo data-driven. Por já ter noção de lógica de programação, 
+								acabei adentrando a área de Analytics com maior facilidade, uma vez que a lógica me ajudou a desenvolver um pensamento 
+								estrutural e analítico, fundamental na interpretação de dados e em como criar soluções eficazes.
+							</p>
 						</div>
 						<div class="col-6 col-12-medium imp-medium">
 							<div id="lottie-animation" class="image fit"></div>
@@ -44,6 +47,27 @@
 					</div>
 				</div>
 			</section>
+
+			<script>
+				const dataInicio = new Date(2022, 3, 1);
+				const dataAtual = new Date();
+
+				let anos = dataAtual.getFullYear() - dataInicio.getFullYear();
+				let meses = dataAtual.getMonth() - dataInicio.getMonth();
+
+				if (meses < 0) {
+					anos--;
+					meses += 12;
+				}
+
+				let textoExperiencia = `${anos} ano${anos !== 1 ? 's' : ''}`;
+				if (meses > 0) {
+					textoExperiencia += ` e ${meses} mês${meses !== 1 ? 'es' : ''}`;
+				}
+
+				document.getElementById("tempo-experiencia").textContent = textoExperiencia;
+			</script>
+
 
 			<script>
 				var animation = lottie.loadAnimation({
