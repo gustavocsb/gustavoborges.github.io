@@ -62,8 +62,9 @@
 
 				let textoExperiencia = `${anos} ano${anos !== 1 ? 's' : ''}`;
 				if (meses > 0) {
-					textoExperiencia += ` e ${meses} mês${meses !== 1 ? 'es' : ''}`;
+					textoExperiencia += ` e ${meses} ${meses !== 1 ? 'meses' : 'mês'}`;
 				}
+
 
 				document.getElementById("tempo-experiencia").textContent = textoExperiencia;
 			</script>
